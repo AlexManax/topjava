@@ -19,14 +19,14 @@ public class MealServlet extends HttpServlet {
         log.debug("redirect to meals");
 
         System.out.println(request.getContextPath());
-        try {
-            System.out.println(request.getPathInfo().replace("/", ""));
-
-            if (!request.getPathInfo().replace("/", "").equals(""))
-                MealsUtil.mealList.remove(Integer.parseInt(request.getPathInfo().replace("/", "")));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            System.out.println(request.getPathInfo().replace("/", ""));
+//
+//            if (!request.getPathInfo().replace("/", "").equals(""))
+//                MealsUtil.mealList.remove(Integer.parseInt(request.getPathInfo().replace("/", "")));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 //        request.getRequestDispatcher("/users.jsp").forward(request, response);
         System.out.println(MealsUtil.getList());
