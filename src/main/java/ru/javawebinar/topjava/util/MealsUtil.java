@@ -17,12 +17,12 @@ import static java.util.stream.Collectors.toList;
 public class MealsUtil {
 
     public static List<Meal> mealList = Arrays.asList(
-            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Завтрак", 500),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 13, 0), "Обед", 1000),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 20, 0), "Ужин", 500),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 31, 10, 0), "Завтрак", 1000),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 31, 13, 0), "Обед", 500),
-            new Meal(LocalDateTime.of(2015, Month.MAY, 31, 20, 0), "Ужин", 510)
+            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Breakfast", 500),
+            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 13, 0), "Lunch", 1000),
+            new Meal(LocalDateTime.of(2015, Month.MAY, 30, 20, 0), "Dinner", 500),
+            new Meal(LocalDateTime.of(2015, Month.MAY, 31, 10, 0), "Breakfast", 1000),
+            new Meal(LocalDateTime.of(2015, Month.MAY, 31, 13, 0), "Lunch", 500),
+            new Meal(LocalDateTime.of(2015, Month.MAY, 31, 20, 0), "Dinner", 510)
     );
 
     public static void main(String[] args) {
