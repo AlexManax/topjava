@@ -28,7 +28,7 @@ public class MealServlet extends HttpServlet {
 //            e.printStackTrace();
 //        }
 
-//        request.getRequestDispatcher("/users.jsp").forward(request, response);
+
         System.out.println(MealsUtil.getList());
         request.setAttribute("mealList", MealsUtil.getList());
         request.getRequestDispatcher("/meals.jsp").forward(request, response);
