@@ -31,6 +31,7 @@ public class DAOservice implements DAOserviceImpl{
     }
 
     public List<Meal> initList() {
+
         if (mealToList == null) {
             mealToList = new ArrayList<>();
         mealToList.add(new Meal(LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Breakfast", 500));

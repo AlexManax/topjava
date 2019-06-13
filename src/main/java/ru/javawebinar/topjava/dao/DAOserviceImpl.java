@@ -6,6 +6,7 @@ import ru.javawebinar.topjava.model.MealTo;
 import java.util.List;
 
 public interface DAOserviceImpl {
+
     List<MealTo> getAll();
 
     void deleteMeal(int id);

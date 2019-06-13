@@ -84,6 +84,7 @@
             <th>Description</th>
             <th>Calories</th>
         </tr>
+
         </thead>
         <tbody>
         <input type="hidden" id="thisField" name="action" value="add">
