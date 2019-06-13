@@ -40,7 +40,7 @@
                 <%--        <th style="${meal.excess ? 'background-color: rgba(255, 0, 0, 0.3)':'background-color: rgba(0, 175, 16, 0.1)'}">
                 <button onclick="location.href='/topjava_war_exploded/meals/${mealList.indexOf(meal)}'">Delete </button></th>--%>
             <td>
-                <button onclick=location.href="meals?action=edit&mealId=<c:out value="${id.count}"/>">Update</button>
+                <button onclick=location.href="meals?action=edit&mealId=<c:out value="${id.count}"/>">Edit</button>
 
                 <button onclick=location.href="meals?action=delete&mealId=<c:out value="${id.count}"/>">Delete</button>
             </td>
