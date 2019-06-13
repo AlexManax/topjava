@@ -72,6 +72,7 @@
     </tbody>
 </table>
 <br>
+
 <hr>
 <form action="meals" method="get" >
 
