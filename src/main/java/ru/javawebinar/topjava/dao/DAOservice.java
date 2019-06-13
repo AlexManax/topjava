@@ -7,6 +7,7 @@ import ru.javawebinar.topjava.util.MealsUtil;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DAOservice implements DAOserviceImpl{
@@ -33,7 +34,7 @@ public class DAOservice implements DAOserviceImpl{
     public List<Meal> initList() {
 
         if (mealToList == null) {
-            mealToList = new ArrayList<>();
+            mealToList = Collections.synchronizedList(new ArrayList<Meal>());
         mealToList.add(new Meal(LocalDateTime.of(2015, Month.MAY, 30, 10, 0), "Breakfast", 500));
         mealToList.add(new Meal(LocalDateTime.of(2015, Month.MAY, 30, 13, 0), "Lunch", 1000));
         mealToList.add(new Meal(LocalDateTime.of(2015, Month.MAY, 30, 20, 0), "Dinner", 500));
