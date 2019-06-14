@@ -61,6 +61,7 @@ public class MealServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("mealList", daOservice.getAll());
+
         request.getRequestDispatcher("/meals.jsp").forward(request, response);
     }
 }
