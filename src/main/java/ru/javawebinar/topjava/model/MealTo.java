@@ -28,20 +28,4 @@ public class MealTo {
                 '}';
     }
 
-    public LocalDateTime getDateTime() {
-        return dateTime;
-
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getCalories() {
-        return calories;
-    }
-
-    public boolean isExcess() {
-        return excess;
-    }
 }
