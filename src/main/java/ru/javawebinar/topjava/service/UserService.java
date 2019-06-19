@@ -6,6 +6,7 @@ import ru.javawebinar.topjava.util.exception.NotFoundException;
 
 import java.util.List;
 
+
 public interface UserService {
 
     User create(User user);
