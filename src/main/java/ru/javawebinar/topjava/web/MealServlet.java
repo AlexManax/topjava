@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import ru.javawebinar.topjava.model.Meal;
 import ru.javawebinar.topjava.repository.MealRepository;
 import ru.javawebinar.topjava.repository.inmemory.InMemoryMealRepositoryImpl;
+import ru.javawebinar.topjava.util.DateTimeUtil;
 import ru.javawebinar.topjava.util.MealsUtil;
 
 import javax.servlet.ServletConfig;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Objects;
+import java.util.function.Predicate;
 
 public class MealServlet extends HttpServlet {
     private static final Logger log = LoggerFactory.getLogger(MealServlet.class);
@@ -62,6 +64,20 @@ public class MealServlet extends HttpServlet {
                 request.setAttribute("meal", meal);
                 request.getRequestDispatcher("/mealForm.jsp").forward(request, response);
                 break;
+            case "filter":
+                log.info("filter");
+                Predicate<Meal> filter = (s) -> DateTimeUtil.isBetween(s.getTime(),
+                        DateTimeUtil.stringToTime(request.getParameter("fromTime").equals("") ? "00:00" : request.getParameter("fromTime")),
+                        DateTimeUtil.stringToTime(request.getParameter("toTime").equals("") ? "23:59" : request.getParameter("toTime"))) &&
+                        s.getDate().isAfter(DateTimeUtil.stringToDate(request.getParameter("fromDate").equals("") ? "0000-00-00" : request.getParameter("fromDate"))) &&
+                        s.getDate().isBefore(DateTimeUtil.stringToDate(request.getParameter("toDate").equals("") ? "9999-12-31" : request.getParameter("toDate")
+                        ));
+                request.setAttribute("meals",
+                        MealsUtil.getFilteredWithExcess(repository.getAll(), MealsUtil.DEFAULT_CALORIES_PER_DAY,
+                                filter));
+                request.getRequestDispatcher("/meals.jsp").forward(request, response);
+                break;
+
             case "all":
             default:
                 log.info("getAll");

@@ -1,5 +1,6 @@
 package ru.javawebinar.topjava.util;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -13,5 +14,12 @@ public class DateTimeUtil {
 
     public static String toString(LocalDateTime ldt) {
         return ldt == null ? "" : ldt.format(DATE_TIME_FORMATTER);
+    }
+
+    public static LocalTime stringToTime(String lTime) {
+        return LocalTime.parse(lTime,DateTimeFormatter.ofPattern("HH:mm"));
+    }
+    public static LocalDate stringToDate(String lTime) {
+        return LocalDate.parse(lTime,DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 }

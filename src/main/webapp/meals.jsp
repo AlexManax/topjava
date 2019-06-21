@@ -6,15 +6,7 @@
 <html>
 <head>
     <title>Meal list</title>
-    <style>
-        .normal {
-            color: green;
-        }
-
-        .excess {
-            color: red;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>
 <section>
@@ -34,14 +26,14 @@
         <dl>
             <dt>From Time:</dt>
             <dd><input type="time" value="" name="fromTime" ></dd>
-            <dt>To Date:</dt>
+            <dt>To Time:</dt>
             <dd><input type="time" value="" name="toTime" ></dd>
         </dl>
         <button type="submit">Filter</button>
     </form>
 
     <br><br>
-    <table border="1" cellpadding="8" cellspacing="0">
+    <table>
         <thead>
         <tr>
             <th>Date</th>
